@@ -1,8 +1,8 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Marcus Li
+- **Dot Number**: li.15625
+- **Due Date**: 2/6/2026 @ 12:40 PM
 
 ## Assignment Overview
 
@@ -106,15 +106,8 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
-
+I have interests in game design and am also fixated on certain video games. I kind of wrote this after making the components, so they aren't really related to these. Oops.
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
@@ -122,7 +115,7 @@ that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
 
-<!-- TODO: browse the list of possible projects then delete this comment -->
+A clock with methods that move the recorded time, a calorie tracker, a media rating tracker
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -143,7 +136,6 @@ about different ways you might allow a client to manipulate your component.
 
 ### Example Component
 
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -211,68 +203,81 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Clock
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    The purpose of this component is to model a clock and the flow of time. The kernel methods will have set time interval movements, while the secondary methods will have more dynamic time movements and other operations.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addMinutes(int m): moves the clock forward by m minutes
+    - void addHours(int h): moves the clock forward by h hours
+    - String getTime(): returns the time in hh:mm format
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - void addTime(int h, int m): moves the clock forward h hours and m minutes
+    - boolean isAfternoon(): returns whether the clock is in the afternoon
+    - void passHalfDay(): moves the clock 12 hours forward
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since OSU components generally all are due to their characteristics.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It would just rely on integers, so no.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, to keep hours within 0-23 and minutes 0-59.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. addTime and passHalfDay will just use addMinutes and addHours. isAfternoon does not require any other methods.
+- Component Design #2: CalorieTracker
+  - **Description**:
+    This component will let the user set a calorie limit, then add calories to a tracker. The user can then get whether they have or have not passed the limit. The kernel will provide this behavior, and the secondary methods will allow for further extensions of the kernel behavior.
+  - **Kernel Methods**:
+    - void setLimit(int l): sets limit to l
+    - void addCalories(String n, int c): adds n to list of items, adds c to calories
+    - boolean overLimit(): returns whether calories > limit
+    - String getTotal(): returns a string containing all items and their respective calories and the total calories
+  - **Secondary Methods**:
+    - void addMultiple(String n, int c, int x): adds c to calories and n to list of items x times
+    - String getHighest(): returns item in the list of items with the highest calories
+    - String getLowest(): returns item in the list of items with the lowest calories
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - Yes, like most OSU components.
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - I would use Queue to keep track of the order items are added.
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - No, there are not any strict limitations on the variables.
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - For addMultiple, yes, since it can just run addCalories multiple times. However, the others will have their own behavior.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: MediaRater
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component will let the user enter a title of a piece of media and a score and store them from 0-10. The kernel will allow
+    the user add entries and view them. Secondary methods will provide methods to view statistics like average/max/min/mode ratings.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void addRating(String s, Integer score): adds the media and rating to the list of ratings
+    - String getRatings(): returns a string containing all media and their ratings
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - int average(): returns the average rating among all media
+    - Map.Pair<String, Integer> max(): returns a pair with the name and score of the media with the highest rating
+    - Map.Pair<String, Integer> min(): returns a pair with the name and score of the media with the lowest rating
+    - double mode(): returns the rating with the most appearances
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, like all OSU components
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Map and Map.Pair will be used to keep track of the data.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - It would need to restrict the scores from 0-10.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
-
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - None of the secondary methods are reliant on the kernel methods, so no.
 
 ## Post-Assignment
 
@@ -280,8 +285,6 @@ The following sections detail everything that you should do once you've
 completed the assignment.
 
 ### Changelog
-
-<!-- TODO: create CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -320,8 +323,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -330,11 +331,9 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
