@@ -24,6 +24,7 @@ public interface CalorieTracker
      * amount
      *
      * @return the name of the item with the highest calories
+     * @requires |this.additions| > 0
      * @ensures getHighest = the name of the item with the highest calories
      */
     String getHighest();
@@ -33,17 +34,8 @@ public interface CalorieTracker
      * amount
      *
      * @return the name of the item with the lowest calories
+     * @requires |this.additions| > 0
      * @ensures getHighest = the name of the item with the lowest calories
      */
     String getLowest();
-
-    /**
-     * Returns a table representation of all added items, their calories, and
-     * total calories added
-     *
-     * @return the table representation of this
-     * @ensures getHighest = table representation of this
-     */
-    String getTable();
-
 }

@@ -30,3 +30,20 @@ the following form: YYYY.0M.0D.
 ### Added
 
 - Designed kernel and enhanced interfaces for CalorieTracker component
+
+## 2026.03.29
+
+### Added
+
+- Designed abstract class for CalorieTracker component that implemented secondary methods using kernel methods and Object methods toString(), equals(), and hashCode()
+
+### Updated
+
+- Added requirements to getHighest() and getLowest() secondary methods
+- Added kernel methods size() along with getAdditions() and getCalorieMap()
+
+### Removed
+
+- removeLast() kernel method since additions is accessible now
+- getTable() secondary method and put it in toString() instead
+

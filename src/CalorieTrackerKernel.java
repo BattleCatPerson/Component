@@ -1,3 +1,5 @@
+import components.map.Map;
+import components.stack.Stack;
 import components.standard.Standard;
 
 /**
@@ -64,12 +66,26 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     int getTotal();
 
     /**
-     * Removes last element from additions and returns it
+     * Returns the size of additions
      *
-     * @return the entry removed
-     * @updates this.additions
-     * @requires {|this.entries| > 0}
-     * @ensures {#this.entries = <removeLast> * this.entries}
+     * @return the calorie amount
+     * @ensures {size = |this.additions|}
      */
-    String removeLast();
+    int size();
+
+    /**
+     * Returns additions
+     *
+     * @return this.additions
+     * @ensures {getAdditions = this.additions}
+     */
+    Stack<String> getAdditions();
+
+    /**
+     * Returns calorieMap
+     *
+     * @return calorieMap
+     * @ensures {getCalorieMap = this.calorieMap}
+     */
+    Map<String, Integer> getCalorieMap();
 }
