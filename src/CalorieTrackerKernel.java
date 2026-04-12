@@ -29,10 +29,18 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
      *
      * @param l
      *            the {@code int} the limit will become
+     * @requires l >= 0
      * @updates this
      * @ensures limit = l
      */
     void setLimit(int l);
+
+    /**
+     * Returns calorie limit of {@this}
+     *
+     * @ensures getLimit = this.limit
+     */
+    int getLimit();
 
     /**
      * Adds an item with a name and calorie amount to this
@@ -42,8 +50,8 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
      * @param c
      *            calories in the item
      * @updates this
-     * @requires n is not in the keys of this
-     * @requires c > 0
+     * @requires c == this.value(n) if n is in this.keys()
+     * @requires c >= 0
      * @ensures this = #this union {(n, c)}, this.additions gains the entry, and
      *          this.calories is updated
      */

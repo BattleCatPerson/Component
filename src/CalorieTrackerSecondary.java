@@ -20,6 +20,15 @@ public abstract class CalorieTrackerSecondary implements CalorieTracker {
 
     @Override
     public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof CalorieTracker)) {
+            return false;
+        }
         CalorieTracker c = (CalorieTracker) obj;
         return c.getCalorieMap().equals(this.getCalorieMap())
                 && c.getAdditions().equals(this.getAdditions());
@@ -28,6 +37,17 @@ public abstract class CalorieTrackerSecondary implements CalorieTracker {
     @Override
     public int hashCode() {
         return this.size();
+    }
+
+    @Override
+    public int compareTo(CalorieTracker c) {
+        int result = 0;
+        if (this.getTotal() > c.getTotal()) {
+            result = 1;
+        } else if (this.getTotal() < c.getTotal()) {
+            result = -1;
+        }
+        return result;
     }
 
     @Override

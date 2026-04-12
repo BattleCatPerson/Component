@@ -47,3 +47,16 @@ the following form: YYYY.0M.0D.
 - removeLast() kernel method since additions is accessible now
 - getTable() secondary method and put it in toString() instead
 
+## 2026.04.11
+
+### Added
+
+- Designed abstract implementation of CalorieTracker using Map and Stack and implemented Standard and kernel methods.
+
+### Updated
+
+- Added some requirements to kernel methods
+- Created new kernel method to get limit
+- Added compareTo to secondary class
+- Changed equals method of secondary class
+
