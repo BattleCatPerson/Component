@@ -60,3 +60,13 @@ the following form: YYYY.0M.0D.
 - Added compareTo to secondary class
 - Changed equals method of secondary class
 
+## 2026.04.19
+
+### Added
+
+- Designed test suite for CalorieTracker component
+- Designed two different use cases for CalorieTracker component
+
+### Updated
+
+- Updated various javaDoc comments in kernel and secondary class

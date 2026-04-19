@@ -1,3 +1,5 @@
+package components.calorietracker;
+
 import components.map.Map;
 import components.stack.Stack;
 import components.standard.Standard;
@@ -25,7 +27,7 @@ import components.standard.Standard;
  */
 public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     /**
-     * Sets calories limit of {@this}
+     * Sets calories limit of {@this}.
      *
      * @param l
      *            the {@code int} the limit will become
@@ -36,14 +38,15 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     void setLimit(int l);
 
     /**
-     * Returns calorie limit of {@this}
+     * Returns calorie limit of {@this}.
      *
      * @ensures getLimit = this.limit
+     * @return this.limit
      */
     int getLimit();
 
     /**
-     * Adds an item with a name and calorie amount to this
+     * Adds an item with a name and calorie amount to this.
      *
      * @param n
      *            name of the item
@@ -58,7 +61,7 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     void addCalories(String n, int c);
 
     /**
-     * Returns whether total calories is over the calorie limit
+     * Returns whether total calories is over the calorie limit.
      *
      * @return true if total calories is over the limit
      * @ensures overLimit = totalCalories > limit
@@ -66,7 +69,7 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     boolean overLimit();
 
     /**
-     * Returns total calories
+     * Returns total calories.
      *
      * @return total calories
      * @ensures getTotal = totalCalories
@@ -74,7 +77,7 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     int getTotal();
 
     /**
-     * Returns the size of additions
+     * Returns the size of additions.
      *
      * @return the calorie amount
      * @ensures {size = |this.additions|}
@@ -82,7 +85,7 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     int size();
 
     /**
-     * Returns additions
+     * Returns additions.
      *
      * @return this.additions
      * @ensures {getAdditions = this.additions}
@@ -90,7 +93,7 @@ public interface CalorieTrackerKernel extends Standard<CalorieTracker> {
     Stack<String> getAdditions();
 
     /**
-     * Returns calorieMap
+     * Returns calorieMap.
      *
      * @return calorieMap
      * @ensures {getCalorieMap = this.calorieMap}

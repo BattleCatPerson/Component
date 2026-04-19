@@ -1,10 +1,12 @@
+package components.calorietracker;
+
 /**
- * {@code CalorieTrackerKernel} enhanced with secondary methods
+ * {@code CalorieTrackerKernel} enhanced with secondary methods.
  */
 public interface CalorieTracker
         extends Comparable<CalorieTracker>, CalorieTrackerKernel {
     /**
-     * Adds an item with name n and calorie amount c x times
+     * Adds an item with name n and calorie amount c x times.
      *
      * @param n
      *            Name of the item
@@ -21,7 +23,7 @@ public interface CalorieTracker
 
     /**
      * Returns the name of the item in this.additions with the highest calorie
-     * amount
+     * amount.
      *
      * @return the name of the item with the highest calories
      * @requires |this.additions| > 0
@@ -31,7 +33,7 @@ public interface CalorieTracker
 
     /**
      * Returns the name of the item in this.additions with the lowest calorie
-     * amount
+     * amount.
      *
      * @return the name of the item with the lowest calories
      * @requires |this.additions| > 0

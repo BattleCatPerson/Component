@@ -1,3 +1,5 @@
+package components.calorietracker;
+
 import components.map.Map;
 import components.map.Map1L;
 import components.stack.Stack;

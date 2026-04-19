@@ -1,6 +1,11 @@
+package components.calorietracker;
+
 import components.stack.Stack;
 import components.stack.Stack1L;
 
+/**
+ * CalorieTracker with standard and enhanced secondary methods.
+ */
 public abstract class CalorieTrackerSecondary implements CalorieTracker {
     @Override
     public String toString() {
@@ -15,6 +20,7 @@ public abstract class CalorieTrackerSecondary implements CalorieTracker {
             result += item + ":\t" + this.getCalorieMap().value(item) + "\n";
             additions.push(item);
         }
+
         return result;
     }
 
@@ -53,7 +59,7 @@ public abstract class CalorieTrackerSecondary implements CalorieTracker {
     @Override
     public void addMultiple(String n, int c, int x) {
         assert c > 0 : "Violation of: c > 0";
-        for (int i = 0; i < c; i++) {
+        for (int i = 0; i < x; i++) {
             this.addCalories(n, c);
         }
     }
